@@ -1,0 +1,142 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Navy base colors */
+  --navy: #0b2a4a;
+  --navy-light: #1a3d5f;
+  --navy-dark: #061926;
+
+  /* Fuchsia/Magenta accent */
+  --fuchsia: #c04b8c;
+  --fuchsia-light: #d376a8;
+  --fuchsia-dark: #9a3b6f;
+
+  /* Gold accent for details */
+  --gold: #e6d36b;
+  --gold-light: #f0e08f;
+  --gold-dark: #d4bb42;
+
+  /* Design tokens */
+  --background: #ffffff;
+  --foreground: var(--navy);
+  --card: #ffffff;
+  --card-foreground: var(--navy);
+  --popover: #ffffff;
+  --popover-foreground: var(--navy);
+  --primary: var(--fuchsia);
+  --primary-foreground: #ffffff;
+  --secondary: var(--navy);
+  --secondary-foreground: #ffffff;
+  --muted: #f5f5f7;
+  --muted-foreground: #6b7280;
+  --accent: var(--gold);
+  --accent-foreground: var(--navy);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: #ffffff;
+  --border: #e5e7eb;
+  --input: #e5e7eb;
+  --ring: var(--fuchsia);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: var(--navy-dark);
+  --foreground: #ffffff;
+  --card: var(--navy);
+  --card-foreground: #ffffff;
+  --popover: var(--navy);
+  --popover-foreground: #ffffff;
+  --primary: var(--fuchsia);
+  --primary-foreground: #ffffff;
+  --secondary: var(--navy-light);
+  --secondary-foreground: #ffffff;
+  --muted: var(--navy-light);
+  --muted-foreground: #d1d5db;
+  --accent: var(--gold);
+  --accent-foreground: var(--navy);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: #ffffff;
+  --border: var(--navy-light);
+  --input: var(--navy-light);
+  --ring: var(--fuchsia);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  --font-sans: "Geist", "Geist Fallback";
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-navy: var(--navy);
+  --color-navy-light: var(--navy-light);
+  --color-navy-dark: var(--navy-dark);
+  --color-fuchsia: var(--fuchsia);
+  --color-fuchsia-light: var(--fuchsia-light);
+  --color-fuchsia-dark: var(--fuchsia-dark);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-gold-dark: var(--gold-dark);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Star pattern utility */
+.star-pattern {
+  background-image: radial-gradient(circle, var(--gold) 1px, transparent 1px);
+  background-size: 30px 30px;
+  opacity: 0.1;
+}
